@@ -6,9 +6,10 @@ A React + Vite frontend for the SupportPilot workspace management app.
 
 1. Install dependencies:
    npm install
-2. Start the app:
+2. Copy `.env.example` to `.env.local` and set `VITE_API_URL` to your backend API base URL (including its API prefix, if applicable).
+3. Start the app:
    npm run dev
-3. Open the app in a browser:
+4. Open the app in a browser:
    http://localhost:4173
 
 ## Scripts
@@ -18,6 +19,4 @@ A React + Vite frontend for the SupportPilot workspace management app.
 - npm run lint — runs ESLint
 - npm run preview — serves the production build locally on port 4173
 
-## Notes
-
-This project expects the backend API to be available at the value configured in VITE_API_URL, or defaults to http://localhost:5000/api.
+The app requires `VITE_API_URL` for all authentication and data requests; it does not fall back to a default backend URL. Restart the dev server after changing environment variables.

@@ -1,4 +1,4 @@
-﻿import { API_URL } from "./apiService";
+import { getApiUrl } from "./apiService";
 
 export function getStoredToken() {
   try {
@@ -25,7 +25,7 @@ export function clearStoredAuth() {
 export async function authRequest(type, payload) {
   const endpoint = type === "login" ? "/login" : "/register";
 
-  const response = await fetch(`${API_URL}${endpoint}`, {
+  const response = await fetch(`${getApiUrl()}${endpoint}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
